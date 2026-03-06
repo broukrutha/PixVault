@@ -1,0 +1,7 @@
+{
+  "image_path": "protected_combined.jpg",
+  "pixel_hash_sha256": "13d2cddc014ee386a3cbc9d2bb9bc9f449bed0a37d36f276a6730e7ce31c15b0",
+  "protection_method": "\u26a1 Combined (All 4 Methods \u2014 Max Protection)",
+  "timestamp": "2026-03-04T02:27:04.382055",
+  "instructions": "Use verify_image_hash() to check integrity"
+}

@@ -1,0 +1,7 @@
+{
+  "image_path": "protected_fawkes.jpg",
+  "pixel_hash_sha256": "ec06d872fc38f75f2ad4de841a6b173a809425f132200c2e5f2e5be2f23fb216",
+  "protection_method": "fawkes",
+  "timestamp": "2026-03-06T01:51:38.708689",
+  "instructions": "Use verify_image_hash() to check integrity"
+}
