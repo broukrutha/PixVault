@@ -1,7 +1,0 @@
-{
-  "image_path": "protected_ulixes.jpg",
-  "pixel_hash_sha256": "19dc7462da0cfe08ee129176ce5451d03b78e73e55c841cb70e4f2be40225d7a",
-  "protection_method": "\ud83e\udde0 Ulixes (Embedding Cluster Attack)",
-  "timestamp": "2026-03-04T23:55:24.488476",
-  "instructions": "Use verify_image_hash() to check integrity"
-}

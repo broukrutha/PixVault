@@ -11,6 +11,19 @@ from PIL import Image, ImageDraw, ImageFont
 import numpy as np
 import gradio as gr
 
+
+def _configure_console_encoding():
+    for stream_name in ("stdout", "stderr"):
+        stream = getattr(sys, stream_name, None)
+        if hasattr(stream, "reconfigure"):
+            try:
+                stream.reconfigure(encoding="utf-8", errors="replace")
+            except Exception:
+                pass
+
+
+_configure_console_encoding()
+
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from protectors.fawkes   import FawkesProtector
@@ -768,7 +781,7 @@ def generate_receipt(orig_arr, prot_arr, threshold, method_label):
 # ═══════════════════════════════════════════════════════════════════════════════
 
 CSS = """
-@import url('https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;500;600;700;800&family=Fira+Code:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&family=Manrope:wght@200;300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
 
 /* ════════════════════════════════════════
    RESET & ROOT
@@ -776,10 +789,10 @@ CSS = """
 *, *::before, *::after { box-sizing: border-box !important; margin: 0 !important; padding: 0 !important; }
 
 :root {
-    --bg:       #0a0a0f;
-    --bg1:      #0f0f17;
-    --bg2:      #141420;
-    --bg3:      #1a1a2e;
+    --bg:       #0a0e14;
+    --bg1:      #0f141a;
+    --bg2:      #151a21;
+    --bg3:      #1b2028;
     --line:     rgba(255,255,255,0.06);
     --line2:    rgba(255,255,255,0.1);
     --line3:    rgba(255,255,255,0.18);
@@ -788,14 +801,14 @@ CSS = """
     --w40:      rgba(255,255,255,0.40);
     --w60:      rgba(255,255,255,0.60);
     --w80:      rgba(255,255,255,0.80);
-    --white:    #f0f0f5;
-    --accent:   #e8ff47;
-    --accent2:  #c8e020;
-    --teal:     #00e5c3;
+    --white:    #f1f3fc;
+    --accent:   #cafd00;
+    --accent2:  #beee00;
+    --teal:     #5af8fb;
     --rose:     #ff4d6d;
     --amber:    #ffb347;
-    --font:     'Sora', sans-serif;
-    --mono:     'Fira Code', monospace;
+    --font:     'Space Grotesk', sans-serif;
+    --mono:     'JetBrains Mono', monospace;
     --r:        12px;
     --r2:       20px;
     --sidebar:  260px;
@@ -1783,7 +1796,7 @@ button.secondary:hover {
 
 HEADER = """
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;500;600;700;800&family=Fira+Code:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&family=Manrope:wght@200;300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
 </style>
 
 <script>

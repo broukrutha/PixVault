@@ -2,7 +2,6 @@
 eot.py
 ------
 Expectation Over Transformations (EOT)
-(from: "Synthesizing Robust Adversarial Examples", Athalye et al. 2018)
 
 EOT makes adversarial perturbations robust across real-world transformations.
 Instead of optimizing for one input, we average gradients over many randomly

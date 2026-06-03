@@ -1,0 +1,10 @@
+venv/
+__pycache__/
+*.pyc
+.dist/
+.qodo/
+.vscode/
+
+images/protected_*
+images/*.sha256
+images/verify_*

@@ -101,7 +101,7 @@ def _apply_patches():
                 self.pipeline.append((name, cls(device=device,
                     epsilon=round(base_eps*epsilon_scale,5), steps=max(10,int(base_steps*steps_scale)))))
         CombinedProtector.__init__ = _combined_init
-        print("[PixVault] Patches applied ✓")
+        print("[PixVault] Patches applied OK")
     except Exception as e:
         print(f"[PixVault] Patches deferred: {e}")
 
@@ -122,17 +122,17 @@ HTML = r"""<!DOCTYPE html>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>PixVault - Identity Secured</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&family=Manrope:wght@200;300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#0a0a0a;--bg2:#111;--bg3:#1a1a1a;--surface:#1e1e1e;--surface2:#252525;
-  --border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.13);
-  --gold:#c9992a;--gold2:#d4a843;--gold3:#e8c46a;
-  --goldbg:rgba(201,153,42,0.1);--goldborder:rgba(201,153,42,0.32);
-  --fg:#ffffff;--fg2:#9a9a9a;--fg3:#505050;
+  --bg:#0a0e14;--bg2:#151a21;--bg3:#1b2028;--surface:#20262f;--surface2:#262c36;
+  --border:rgba(255,255,255,0.06);--border2:rgba(255,255,255,0.10);
+  --gold:#cafd00;--gold2:#beee00;--gold3:#f3ffca;
+  --goldbg:rgba(202,253,0,0.10);--goldborder:rgba(202,253,0,0.25);
+  --fg:#f1f3fc;--fg2:#a8abb3;--fg3:#72757d;
   --green:#22c55e;--red:#ef4444;
-  --font:'Inter',sans-serif;--mono:'JetBrains Mono',monospace;
+  --font:'Space Grotesk',sans-serif;--mono:'JetBrains Mono',monospace;
   --nav:64px;
 }
 html,body{background:var(--bg);color:var(--fg);font-family:var(--font);min-height:100vh;overflow-x:hidden;font-size:14px;line-height:1.6}
@@ -156,8 +156,8 @@ html,body{background:var(--bg);color:var(--fg);font-family:var(--font);min-heigh
 .nl.active{color:var(--fg)}
 .nl.active::after{content:'';position:absolute;bottom:-1px;left:15px;right:15px;height:2px;background:var(--gold);border-radius:1px}
 .nav-cta{padding:9px 22px;border-radius:8px;font-size:14px;font-weight:700;
-  background:var(--gold);color:#080808;border:none;cursor:pointer;transition:all .18s;letter-spacing:-.01em}
-.nav-cta:hover{background:var(--gold3);transform:translateY(-1px);box-shadow:0 4px 20px rgba(201,153,42,.3)}
+  background:var(--gold);color:#1a2000;border:none;cursor:pointer;transition:all .18s;letter-spacing:-.01em}
+.nav-cta:hover{background:var(--gold3);transform:translateY(-1px);box-shadow:0 4px 20px rgba(202,253,0,.2)}
 
 /* ── APP ── */
 #app{padding-top:var(--nav);min-height:100vh}
@@ -180,7 +180,7 @@ html,body{background:var(--bg);color:var(--fg);font-family:var(--font);min-heigh
   background:var(--gold);color:#080808;font-size:14px;font-weight:700;cursor:pointer;border:none;
   transition:all .18s;letter-spacing:-.01em;text-decoration:none}
 .hbtn-p svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.5}
-.hbtn-p:hover{background:var(--gold3);transform:translateY(-1px);box-shadow:0 8px 28px rgba(201,153,42,.3)}
+.hbtn-p:hover{background:var(--gold3);transform:translateY(-1px);box-shadow:0 8px 28px rgba(202,253,0,.2)}
 .hbtn-g{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:8px;
   background:transparent;color:var(--fg);font-size:14px;font-weight:600;cursor:pointer;
   border:1px solid var(--border2);transition:all .18s;text-decoration:none}
@@ -264,7 +264,7 @@ html,body{background:var(--bg);color:var(--fg);font-family:var(--font);min-heigh
   border:none;transition:all .18s;width:100%;letter-spacing:-.01em}
 .btn:disabled{opacity:.4;cursor:not-allowed}
 .btn-g{background:var(--gold);color:#080808}
-.btn-g:hover:not(:disabled){background:var(--gold3);transform:translateY(-1px);box-shadow:0 6px 24px rgba(201,153,42,.28)}
+.btn-g:hover:not(:disabled){background:var(--gold3);transform:translateY(-1px);box-shadow:0 6px 24px rgba(202,253,0,.2)}
 .btn-o{background:transparent;color:var(--gold);border:1px solid var(--goldborder)}
 .btn-o:hover:not(:disabled){background:var(--goldbg)}
 .btn-gh{background:var(--surface);color:var(--fg2);border:1px solid var(--border2)}
@@ -374,7 +374,7 @@ input[type=range]{width:100%;accent-color:var(--gold);cursor:pointer;height:4px}
 .pbtn.ghost{background:transparent;color:var(--gold);border:1px solid var(--goldborder)}
 .pbtn.ghost:hover{background:var(--goldbg)}
 .pbtn.primary{background:var(--gold);color:#080808}
-.pbtn.primary:hover{background:var(--gold3);transform:translateY(-1px);box-shadow:0 6px 24px rgba(201,153,42,.28)}
+.pbtn.primary:hover{background:var(--gold3);transform:translateY(-1px);box-shadow:0 6px 24px rgba(202,253,0,.2)}
 
 /* ══ ABOUT ══ */
 .al2{max-width:840px;margin:0 auto}
@@ -736,7 +736,7 @@ input[type=range]{width:100%;accent-color:var(--gold);cursor:pointer;height:4px}
   const ctx = C.getContext('2d');
   function rsz(){const s=Math.min(C.parentElement.clientWidth,640);C.width=s;C.height=s}
   rsz(); window.addEventListener('resize',rsz);
-  const G='rgba(201,153,42,';
+  const G='rgba(202,253,0,';
   let rot=0;
   const N=110, pts=[];
   for(let i=0;i<N;i++){const p=Math.acos(1-2*(i+.5)/N),t=Math.PI*(1+Math.sqrt(5))*i;pts.push({x:Math.sin(p)*Math.cos(t),y:Math.sin(p)*Math.sin(t),z:Math.cos(p)})}
@@ -1170,7 +1170,7 @@ def download(filename: str):
 # ── Entry ─────────────────────────────────────────────────────────────────────
 if __name__ == "__main__":
     print("="*52)
-    print("  PIXVAULT  →  http://localhost:5000")
-    print("  API Docs  →  http://localhost:5000/api/docs")
+    print("  PIXVAULT  ->  http://localhost:5000")
+    print("  API Docs  ->  http://localhost:5000/api/docs")
     print("="*52)
     uvicorn.run("server:app", host="0.0.0.0", port=5000, reload=False)
